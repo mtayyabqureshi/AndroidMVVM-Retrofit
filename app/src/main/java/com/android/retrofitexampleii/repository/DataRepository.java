@@ -15,23 +15,23 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class DataRespositry {
+public class DataRepository {
 
     private MutableLiveData<List<CommentsModel>> commentsList;
     private MutableLiveData<Boolean> isLoading = new MutableLiveData<>();
-    private static DataRespositry instance;
+    private static DataRepository instance;
 
 
 
-    public static DataRespositry getInstance() {
+    public static DataRepository getInstance() {
         if (instance == null) {
-            instance = new DataRespositry();
+            instance = new DataRepository();
         }
         return instance;
     }
-    //we will call this method to get the data
+    //method to get the data
     public LiveData<List<CommentsModel>> getComments() {
-        //if the list is null
+        //list is null
         if (commentsList == null) {
             commentsList = new MutableLiveData<List<CommentsModel>>();
             isLoading.postValue(false);

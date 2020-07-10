@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.android.retrofitexampleii.model.CommentsModel;
-import com.android.retrofitexampleii.repository.DataRespositry;
+import com.android.retrofitexampleii.repository.DataRepository;
 
 import java.util.List;
 
@@ -18,9 +18,9 @@ public class CommentsViewModel extends ViewModel {
         if (commentsList!=null){
             return;
         }
-        DataRespositry dataRespositry = DataRespositry.getInstance();
-        commentsList= dataRespositry.getComments();
-        isLoading= dataRespositry.getIsLoading();
+        DataRepository dataRepository = DataRepository.getInstance();
+        commentsList= dataRepository.getComments();
+        isLoading= dataRepository.getIsLoading();
     }
 
     public MutableLiveData<Boolean> getIsLoading(){
