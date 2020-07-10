@@ -1,15 +1,11 @@
-package com.android.retrofitexampleii.ViewModel;
+package com.android.retrofitexampleii.viewmodel;
 
-import android.app.Application;
-
-import androidx.annotation.NonNull;
-import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.android.retrofitexampleii.DataModel.CommentsModel;
-import com.android.retrofitexampleii.Repository.DataRespositry;
+import com.android.retrofitexampleii.model.CommentsModel;
+import com.android.retrofitexampleii.repository.DataRespositry;
 
 import java.util.List;
 

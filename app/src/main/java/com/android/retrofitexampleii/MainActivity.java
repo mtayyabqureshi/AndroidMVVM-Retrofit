@@ -4,29 +4,30 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.RelativeLayout;
 
-import com.android.retrofitexampleii.Adapter.CommentsRecyclerViewAdapter;
-import com.android.retrofitexampleii.DataModel.CommentsModel;
-import com.android.retrofitexampleii.ViewModel.CommentsViewModel;
+import com.android.retrofitexampleii.adapter.CommentsRecyclerViewAdapter;
+import com.android.retrofitexampleii.model.CommentsModel;
+import com.android.retrofitexampleii.viewmodel.CommentsViewModel;
 
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     RelativeLayout prgressLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        prgressLayout=findViewById(R.id.relativeLayoutProgressBar);
-        recyclerView=findViewById(R.id.recycler_view);
+        prgressLayout = findViewById(R.id.relativeLayoutProgressBar);
+        recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         recyclerView.hasFixedSize();
         getLoadingProgress();
@@ -49,13 +50,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-    public void getData(){
+
+    public void getData() {
         CommentsViewModel model = ViewModelProviders.of(this).get(CommentsViewModel.class);
         model.init();
         model.getData().observe(this, new Observer<List<CommentsModel>>() {
             @Override
             public void onChanged(@Nullable List<CommentsModel> commentList) {
-               RecyclerView.Adapter adapter = new CommentsRecyclerViewAdapter(getApplicationContext(),commentList);
+                RecyclerView.Adapter adapter = new CommentsRecyclerViewAdapter(getApplicationContext(), commentList);
                 recyclerView.setAdapter(adapter);
             }
         });

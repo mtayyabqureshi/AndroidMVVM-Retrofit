@@ -1,6 +1,6 @@
-package com.android.retrofitexampleii.Interface;
+package com.android.retrofitexampleii.interfaces;
 
-import com.android.retrofitexampleii.DataModel.CommentsModel;
+import com.android.retrofitexampleii.model.CommentsModel;
 
 import java.util.List;
 
@@ -12,5 +12,4 @@ public interface CommentsInterface {
     String BASE_URL = "https://jsonplaceholder.typicode.com/";
     @GET("comments")
     Call<List<CommentsModel>> getComments();
-
 }

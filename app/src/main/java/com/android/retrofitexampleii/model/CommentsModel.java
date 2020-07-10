@@ -1,4 +1,4 @@
-package com.android.retrofitexampleii.DataModel;
+package com.android.retrofitexampleii.model;
 
 public class CommentsModel {
 

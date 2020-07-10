@@ -1,13 +1,11 @@
-package com.android.retrofitexampleii.Repository;
-import android.app.Application;
-import android.os.AsyncTask;
+package com.android.retrofitexampleii.repository;
 import android.util.Log;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
-import com.android.retrofitexampleii.DataModel.CommentsModel;
-import com.android.retrofitexampleii.Interface.CommentsInterface;
+import com.android.retrofitexampleii.model.CommentsModel;
+import com.android.retrofitexampleii.interfaces.CommentsInterface;
 
 import java.util.List;
 

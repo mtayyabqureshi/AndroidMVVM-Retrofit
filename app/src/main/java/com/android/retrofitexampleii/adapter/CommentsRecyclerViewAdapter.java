@@ -1,4 +1,4 @@
-package com.android.retrofitexampleii.Adapter;
+package com.android.retrofitexampleii.adapter;
 
 import android.content.Context;
 import android.graphics.Point;
@@ -13,7 +13,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.android.retrofitexampleii.DataModel.CommentsModel;
+import com.android.retrofitexampleii.model.CommentsModel;
 import com.android.retrofitexampleii.R;
 
 import java.util.ArrayList;
